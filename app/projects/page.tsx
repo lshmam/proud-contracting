@@ -7,12 +7,30 @@ export const metadata: Metadata = {
 };
 
 const projects = [
-  { category: 'Residential', title: 'Custom Home Build – Surrey, BC', description: 'Full custom home build from foundation to finishing. 3,200 sq ft, 4 bed, 3 bath with modern finishes.', tags: ['Residential', 'New Build', 'Full Scope'] },
-  { category: 'Commercial', title: 'Office Renovation – Burnaby', description: 'Complete office fit-out for a tech company — open floor plan, electrical, HVAC coordination, and millwork.', tags: ['Commercial', 'Renovation', 'Electrical'] },
-  { category: 'Electrical', title: 'Panel Upgrade – Vancouver', description: '200A panel replacement and full rewire for a 1960s home. EV charger and solar-ready configuration included.', tags: ['Electrical', 'Residential', 'Upgrade'] },
-  { category: 'Industrial', title: 'Warehouse Construction – Langley', description: '18,000 sq ft warehouse build with electrical service, loading docks, office section, and fire suppression.', tags: ['Industrial', 'New Build', 'Commercial'] },
-  { category: 'Plumbing', title: 'Multi-Unit Plumbing – Coquitlam', description: 'Rough-in plumbing for a 12-unit townhouse development. Full DWV, supply, and gas work.', tags: ['Plumbing', 'Multi-Unit', 'New Build'] },
-  { category: 'Renovation', title: 'Full Home Renovation – Delta, BC', description: 'Complete gut renovation of a 1970s home — new kitchen, 2 baths, flooring, windows, and electrical.', tags: ['Renovation', 'Residential', 'Full Scope'] },
+  {
+    category: 'Residential', image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&auto=format&fit=crop',
+    title: 'Custom Home Build – Surrey, BC', description: 'Full custom home build from foundation to finishing. 3,200 sq ft, 4 bed, 3 bath with modern finishes.', tags: ['Residential', 'New Build', 'Full Scope'],
+  },
+  {
+    category: 'Commercial', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop',
+    title: 'Office Renovation – Burnaby', description: 'Complete office fit-out for a tech company — open floor plan, electrical, HVAC coordination, and millwork.', tags: ['Commercial', 'Renovation', 'Electrical'],
+  },
+  {
+    category: 'Electrical', image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80&auto=format&fit=crop',
+    title: 'Panel Upgrade – Vancouver', description: '200A panel replacement and full rewire for a 1960s home. EV charger and solar-ready configuration included.', tags: ['Electrical', 'Residential', 'Upgrade'],
+  },
+  {
+    category: 'Industrial', image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=80&auto=format&fit=crop',
+    title: 'Warehouse Construction – Langley', description: '18,000 sq ft warehouse build with electrical service, loading docks, office section, and fire suppression.', tags: ['Industrial', 'New Build', 'Commercial'],
+  },
+  {
+    category: 'Plumbing', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop',
+    title: 'Multi-Unit Plumbing – Coquitlam', description: 'Rough-in plumbing for a 12-unit townhouse development. Full DWV, supply, and gas work.', tags: ['Plumbing', 'Multi-Unit', 'New Build'],
+  },
+  {
+    category: 'Renovation', image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&auto=format&fit=crop',
+    title: 'Full Home Renovation – Delta, BC', description: 'Complete gut renovation of a 1970s home — new kitchen, 2 baths, flooring, windows, and electrical.', tags: ['Renovation', 'Residential', 'Full Scope'],
+  },
 ];
 
 const categoryColors: Record<string, { bg: string; color: string }> = {
@@ -49,15 +67,11 @@ export default function ProjectsPage() {
               const colors = categoryColors[p.category] || { bg: '#F3F4F6', color: '#374151' };
               return (
                 <div key={i} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
-                  <div style={{
-                    height: '180px', borderRadius: '8px', marginBottom: '1.25rem',
-                    background: `linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%)`,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  }}>
-                    <span style={{ fontSize: '3rem' }}>
-                      {{ Residential: '🏠', Commercial: '🏢', Electrical: '⚡', Industrial: '🏭', Plumbing: '🔧', Renovation: '🔨' }[p.category] || '🏗️'}
-                    </span>
-                  </div>
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1.25rem', display: 'block' }}
+                  />
                   <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.875rem', flexWrap: 'wrap' }}>
                     {p.tags.map((t, j) => (
                       <span key={j} style={{ background: j === 0 ? colors.bg : 'var(--gray-100)', color: j === 0 ? colors.color : 'var(--gray-600)', fontSize: '0.72rem', fontWeight: 600, padding: '0.2rem 0.6rem', borderRadius: '100px' }}>

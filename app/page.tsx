@@ -166,33 +166,21 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero Card */}
-            <div className="animate-fade-up delay-200" style={{ display: 'grid', gap: '1rem', flexShrink: 0 }}>
-              <div style={{
-                background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(255,255,255,0.15)', borderRadius: '16px',
-                padding: '1.5rem', minWidth: '220px',
-              }}>
-                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Trusted Since</p>
-                <p style={{ color: 'white', fontSize: '2.25rem', fontWeight: 900, lineHeight: 1 }}>2000</p>
+            {/* Hero Image */}
+            <div className="animate-fade-up delay-200" style={{ position: 'relative', flexShrink: 0, width: '420px' }}>
+              <img
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=840&q=80&auto=format&fit=crop"
+                alt="Construction workers on site"
+                style={{ width: '100%', height: '420px', objectFit: 'cover', borderRadius: '20px', display: 'block' }}
+              />
+              {/* Floating stat cards */}
+              <div style={{ position: 'absolute', bottom: '1.5rem', left: '-1.5rem', background: 'white', borderRadius: '12px', padding: '1rem 1.25rem', boxShadow: '0 8px 32px rgba(0,0,0,0.18)' }}>
+                <p style={{ color: 'var(--gray-400)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>Projects Done</p>
+                <p style={{ color: 'var(--navy)', fontSize: '1.75rem', fontWeight: 900, lineHeight: 1 }}>500+</p>
               </div>
-              <div style={{
-                background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(255,255,255,0.15)', borderRadius: '16px',
-                padding: '1.5rem',
-              }}>
-                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Projects Done</p>
-                <p style={{ color: 'white', fontSize: '2.25rem', fontWeight: 900, lineHeight: 1 }}>500+</p>
-              </div>
-              <div style={{
-                background: 'var(--blue)', backdropFilter: 'blur(12px)',
-                border: 'none', borderRadius: '16px', padding: '1.5rem',
-              }}>
-                <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>Client Rating</p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-                  <p style={{ color: 'white', fontSize: '2.25rem', fontWeight: 900, lineHeight: 1 }}>5.0</p>
-                  <span style={{ fontSize: '1.25rem' }}>⭐</span>
-                </div>
+              <div style={{ position: 'absolute', top: '1.5rem', right: '-1.5rem', background: 'var(--blue)', borderRadius: '12px', padding: '1rem 1.25rem', boxShadow: '0 8px 32px rgba(26,111,196,0.35)' }}>
+                <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>Experience</p>
+                <p style={{ color: 'white', fontSize: '1.75rem', fontWeight: 900, lineHeight: 1 }}>25+ yrs</p>
               </div>
             </div>
           </div>
@@ -287,27 +275,30 @@ export default function HomePage() {
               <Link href="/about" className="btn-primary">About Our Company</Link>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              {whyUs.map((item, i) => (
-                <div key={i} style={{
-                  background: i % 2 === 0 ? 'var(--gray-50)' : 'white',
-                  border: '1px solid var(--gray-200)',
-                  borderRadius: '12px', padding: '1.5rem',
-                  transition: 'box-shadow 0.2s, transform 0.2s',
-                }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--shadow-md)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-3px)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none'; (e.currentTarget as HTMLDivElement).style.transform = 'none'; }}
-                >
-                  <div style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{item.icon}</div>
-                  <h4 style={{ fontSize: '0.9375rem', marginBottom: '0.375rem', color: 'var(--navy)' }}>{item.title}</h4>
-                  <p style={{ fontSize: '0.825rem', color: 'var(--gray-600)', lineHeight: 1.55, margin: 0 }}>{item.desc}</p>
-                </div>
-              ))}
+            {/* Real photo with overlaid feature grid */}
+            <div style={{ position: 'relative' }}>
+              <img
+                src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&auto=format&fit=crop"
+                alt="Construction team reviewing blueprints"
+                style={{ width: '100%', height: '460px', objectFit: 'cover', borderRadius: '20px', display: 'block' }}
+              />
+              {/* Feature chips over image */}
+              <div style={{
+                position: 'absolute', bottom: '1.5rem', left: '1.5rem', right: '1.5rem',
+                background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(8px)',
+                borderRadius: '14px', padding: '1.25rem',
+                display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.625rem',
+              }}>
+                {whyUs.map((item, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <span style={{ fontSize: '1rem' }}>{item.icon}</span>
+                    <span style={{ color: 'var(--navy)', fontSize: '0.8rem', fontWeight: 600 }}>{item.title}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-
-        <style>{`@media(max-width:768px){ .why-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
       {/* ── CTA BANNER ── */}
