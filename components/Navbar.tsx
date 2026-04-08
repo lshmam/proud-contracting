@@ -4,14 +4,14 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const services = [
-  { name: 'Electrical Services', href: '/services/electrical', icon: '⚡' },
-  { name: 'Plumbing Services', href: '/services/plumbing', icon: '🔧' },
-  { name: 'Residential Contracting', href: '/services/residential', icon: '🏠' },
-  { name: 'Commercial Contracting', href: '/services/commercial', icon: '🏢' },
-  { name: 'Industrial Contracting', href: '/services/industrial', icon: '🏭' },
-  { name: 'Design-Build', href: '/services/design-build', icon: '📐' },
-  { name: 'Renovations & Upgrades', href: '/services/renovations', icon: '🔨' },
-  { name: 'Project Management', href: '/services/project-management', icon: '📋' },
+  { name: 'Electrical Services', href: '/services/electrical' },
+  { name: 'Plumbing Services', href: '/services/plumbing' },
+  { name: 'Residential Contracting', href: '/services/residential' },
+  { name: 'Commercial Contracting', href: '/services/commercial' },
+  { name: 'Industrial Contracting', href: '/services/industrial' },
+  { name: 'Design-Build', href: '/services/design-build' },
+  { name: 'Renovations & Upgrades', href: '/services/renovations' },
+  { name: 'Project Management', href: '/services/project-management' },
 ];
 
 export default function Navbar() {
@@ -48,7 +48,7 @@ export default function Navbar() {
             <div style={{
               fontWeight: 600, fontSize: '0.75rem', letterSpacing: '0.12em',
               textTransform: 'uppercase', lineHeight: 1.2, marginTop: '2px',
-              color: 'var(--blue)',
+              color: 'var(--navy)',
             }}>CONTRACTING</div>
           </div>
         </Link>
@@ -99,7 +99,6 @@ export default function Navbar() {
                     color: 'var(--gray-700)', fontSize: '0.9rem', fontWeight: 500,
                     transition: 'background 0.15s, color 0.15s',
                   }}>
-                    <span style={{ fontSize: '1.1rem' }}>{s.icon}</span>
                     {s.name}
                   </Link>
                 ))}
@@ -161,7 +160,7 @@ export default function Navbar() {
                 padding: '0.5rem 0.75rem', color: 'var(--gray-700)',
                 fontSize: '0.9rem', fontWeight: 500, textDecoration: 'none',
               }}>
-                <span>{s.icon}</span> {s.name}
+                {s.name}
               </Link>
             ))}
           </div>

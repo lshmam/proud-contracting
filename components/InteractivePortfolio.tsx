@@ -40,11 +40,7 @@ export default function InteractivePortfolio() {
 
         {/* Accordion Container */}
         <FadeIn delay={200}>
-          <div className="flex flex-col md:flex-row gap-5" style={{ 
-            height: '85vh',
-            minHeight: '600px',
-            maxHeight: '1100px',
-          }}>
+          <div className="flex flex-col md:flex-row gap-5 portfolio-container">
             {projects.map((p, i) => (
               <div 
                 key={i}
@@ -75,6 +71,9 @@ export default function InteractivePortfolio() {
       </div>
       
       <style>{`
+        .portfolio-container {
+          height: auto;
+        }
         .portfolio-accordion-item {
           flex: 1;
           display: flex;
@@ -83,14 +82,26 @@ export default function InteractivePortfolio() {
           transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1);
           cursor: pointer;
         }
-        .portfolio-accordion-item:hover {
-          flex: 2.2;
-        }
         .portfolio-accordion-item img {
           transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        .portfolio-accordion-item:hover img {
-          transform: scale(1.04);
+        @media (max-width: 767px) {
+          .portfolio-accordion-item {
+            min-height: 450px;
+          }
+        }
+        @media (min-width: 768px) {
+          .portfolio-container {
+            height: 85vh;
+            min-height: 600px;
+            max-height: 1100px;
+          }
+          .portfolio-accordion-item:hover {
+            flex: 2.2;
+          }
+          .portfolio-accordion-item:hover img {
+            transform: scale(1.04);
+          }
         }
       `}</style>
     </section>
