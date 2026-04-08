@@ -66,7 +66,7 @@ export default function ContactPage() {
                   },
                 ].map((c, i) => (
                   <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                    <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: 'var(--blue-pale)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '44px', height: '44px', borderRadius: 0, background: 'var(--blue-pale)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       {c.icon}
                     </div>
                     <div>
@@ -82,7 +82,7 @@ export default function ContactPage() {
               </div>
 
               {/* Hours */}
-              <div style={{ background: 'var(--gray-50)', border: '1px solid var(--gray-200)', borderRadius: '12px', padding: '1.5rem' }}>
+              <div style={{ background: 'var(--gray-50)', border: '1px solid var(--gray-200)', borderRadius: 0, padding: '1.5rem' }}>
                 <h4 style={{ fontSize: '0.9rem', marginBottom: '1rem', color: 'var(--navy)' }}>Business Hours</h4>
                 {[
                   ['Monday – Friday', '7:00 AM – 6:00 PM'],
@@ -98,10 +98,10 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div style={{ background: 'white', border: '1px solid var(--gray-200)', borderRadius: '16px', padding: '2.5rem', boxShadow: 'var(--shadow-md)' }}>
+            <div style={{ background: 'white', border: '1px solid var(--gray-200)', borderRadius: 0, padding: '2.5rem', boxShadow: 'var(--shadow-md)' }}>
               {submitted ? (
                 <div style={{ textAlign: 'center', padding: '3rem 0' }}>
-                  <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: '#D1FAE5', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>
+                  <div style={{ width: '64px', height: '64px', borderRadius: 0, background: '#D1FAE5', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
                   <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>Message Sent!</h3>
@@ -166,7 +166,7 @@ export default function ContactPage() {
 
 const inputStyle: React.CSSProperties = {
   width: '100%', padding: '0.7rem 0.875rem',
-  border: '1.5px solid var(--gray-200)', borderRadius: '8px',
+  border: '1.5px solid var(--gray-200)', borderRadius: 0,
   fontSize: '0.9375rem', fontFamily: 'inherit', color: 'var(--gray-900)',
   outline: 'none', transition: 'border-color 0.2s', background: 'white',
 };

@@ -70,11 +70,11 @@ export default function ProjectsPage() {
                   <img
                     src={p.image}
                     alt={p.title}
-                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1.25rem', display: 'block' }}
+                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: 0, marginBottom: '1.25rem', display: 'block' }}
                   />
                   <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.875rem', flexWrap: 'wrap' }}>
                     {p.tags.map((t, j) => (
-                      <span key={j} style={{ background: j === 0 ? colors.bg : 'var(--gray-100)', color: j === 0 ? colors.color : 'var(--gray-600)', fontSize: '0.72rem', fontWeight: 600, padding: '0.2rem 0.6rem', borderRadius: '100px' }}>
+                      <span key={j} style={{ background: j === 0 ? colors.bg : 'var(--gray-100)', color: j === 0 ? colors.color : 'var(--gray-600)', fontSize: '0.72rem', fontWeight: 600, padding: '0.2rem 0.6rem', borderRadius: 0 }}>
                         {t}
                       </span>
                     ))}
@@ -87,7 +87,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* CTA */}
-          <div style={{ textAlign: 'center', background: 'white', border: '1px solid var(--gray-200)', borderRadius: '16px', padding: '3rem' }}>
+          <div style={{ textAlign: 'center', background: 'white', border: '1px solid var(--gray-200)', borderRadius: 0, padding: '3rem' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>Have a project in mind?</h3>
             <p style={{ color: 'var(--gray-600)', marginBottom: '1.75rem', lineHeight: 1.65 }}>
               We&apos;d love to add your project to our portfolio. Get in touch for a free quote.

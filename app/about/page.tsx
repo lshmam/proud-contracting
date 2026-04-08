@@ -68,7 +68,7 @@ export default function AboutPage() {
                 <div key={i} style={{
                   background: i === 0 ? 'var(--navy)' : i === 1 ? 'var(--blue)' : 'var(--gray-50)',
                   border: i >= 2 ? '1px solid var(--gray-200)' : 'none',
-                  borderRadius: '14px', padding: '1.75rem',
+                  borderRadius: 0, padding: '1.75rem',
                   color: i < 2 ? 'white' : 'inherit',
                 }}>
                   <div style={{ fontSize: '1.75rem', marginBottom: '0.875rem' }}>{v.icon}</div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
 
       {/* Why Choose Us */}
       <section id="why-us" className="section" style={{ background: 'var(--navy)', overflow: 'hidden', position: 'relative' }}>
-        <div style={{ position: 'absolute', right: '-100px', top: '-100px', width: '400px', height: '400px', borderRadius: '50%', background: 'rgba(255,255,255,0.03)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', right: '-100px', top: '-100px', width: '400px', height: '400px', borderRadius: 0, background: 'rgba(255,255,255,0.03)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="section-label" style={{ color: '#93C5FD' }}>Why Choose Us</span>
@@ -104,7 +104,7 @@ export default function AboutPage() {
               <div key={i} style={{
                 background: 'rgba(255,255,255,0.06)',
                 border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '12px', padding: '1.5rem', textAlign: 'center',
+                borderRadius: 0, padding: '1.5rem', textAlign: 'center',
                 transition: 'background 0.2s',
               }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.875rem' }}>{item.icon}</div>

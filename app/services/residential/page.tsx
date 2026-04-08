@@ -82,7 +82,7 @@ export default function ServicesIndexPage() {
               <Link key={i} href={s.href} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ height: '100%', cursor: 'pointer' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
-                    <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: s.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', flexShrink: 0 }}>
+                    <div style={{ width: '52px', height: '52px', borderRadius: 0, background: s.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', flexShrink: 0 }}>
                       {s.icon}
                     </div>
                     <h3 style={{ fontSize: '1.075rem', color: 'var(--navy)', margin: 0 }}>{s.title}</h3>
@@ -90,7 +90,7 @@ export default function ServicesIndexPage() {
                   <p style={{ color: 'var(--gray-600)', fontSize: '0.875rem', lineHeight: 1.65, marginBottom: '1.25rem' }}>{s.description}</p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.375rem', marginBottom: '1.25rem' }}>
                     {s.items.map((item, j) => (
-                      <span key={j} style={{ background: s.bg, color: s.color, fontSize: '0.75rem', fontWeight: 600, padding: '0.25rem 0.625rem', borderRadius: '100px' }}>
+                      <span key={j} style={{ background: s.bg, color: s.color, fontSize: '0.75rem', fontWeight: 600, padding: '0.25rem 0.625rem', borderRadius: 0 }}>
                         {item}
                       </span>
                     ))}
@@ -117,7 +117,7 @@ export default function ServicesIndexPage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-white" style={{ fontWeight: 700 }}>Get a Free Quote</Link>
-            <a href="tel:7789193195" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 600, fontSize: '0.9375rem', padding: '0.8rem 1.75rem', borderRadius: '6px', border: '2px solid rgba(255,255,255,0.35)', textDecoration: 'none' }}>
+            <a href="tel:7789193195" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'white', fontWeight: 600, fontSize: '0.9375rem', padding: '0.8rem 1.75rem', borderRadius: 0, border: '2px solid rgba(255,255,255,0.35)', textDecoration: 'none' }}>
               📞 778-919-3195
             </a>
           </div>

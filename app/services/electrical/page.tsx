@@ -43,7 +43,7 @@ export default function ElectricalPage() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.625rem', marginBottom: '2.5rem' }}>
                 {highlights.map((item, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <div style={{ width: '18px', height: '18px', borderRadius: '50%', background: '#FEF3C7', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <div style={{ width: '18px', height: '18px', borderRadius: 0, background: '#FEF3C7', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
                     <span style={{ color: 'var(--gray-700)', fontSize: '0.875rem', fontWeight: 500 }}>{item}</span>
@@ -84,7 +84,7 @@ export function ServiceHeader({ label, title, description, breadcrumb, icon, ico
     <section style={{ background: 'linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)', padding: '4rem 0 3.5rem' }}>
       <div className="container">
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-          <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', flexShrink: 0 }}>
+          <div style={{ width: '52px', height: '52px', borderRadius: 0, background: iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', flexShrink: 0 }}>
             {icon}
           </div>
           <span className="section-label" style={{ color: '#93C5FD' }}>{label}</span>
